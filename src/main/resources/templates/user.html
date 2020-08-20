@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${example}">Testowy nagłówek</h1>
+
+    <h2 th:text="|Imie: ${user.firstName}|">Imie</h2>
+    <h2 th:text="|Nazwisko: ${user.lastName}|">Nazwisko</h2>
+
+    <a th:href="@{|/users/${user.firstName}|}">Strona użytkownika</a>
+<!--    <img th:src="${imageUrl}">-->
+    <h1 th:if="${number >= 0}">Liczba jest większa bądź równa zeru</h1>
+    <h1 th:if="${number < 0}">Liczba jest mniejsza od zera</h1>
+</body>
+</html>
