@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+    <div th:replace="testFragments :: header"></div>
     <ul>
         <li th:each="user: ${users}"
             th:text="|${user.firstName} ${user.lastName}|">Imie i nazwisko</li>
     </ul>
+    <div th:replace="testFragments :: footer"></div>
 </body>
 </html>

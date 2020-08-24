@@ -4,13 +4,14 @@ import com.example.demo.examples.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Controller
-public class HelloController {
+public class UserController {
 
     @GetMapping("/example")
     String home() {
@@ -36,5 +37,20 @@ public class HelloController {
 
         model.addAttribute("users", users);
         return "users";
+    }
+
+    @GetMapping("/add")
+    String getUserForm(Model model) {
+        User attributeValue = new User();
+        attributeValue.setFirstName("Marcin");
+        attributeValue.setLastName("P");
+        model.addAttribute("user", attributeValue);
+        return "userForm";
+    }
+
+    @PostMapping("/add")
+    String add(User user) {
+        System.out.println(user);
+        return "redirect:/users";
     }
 }

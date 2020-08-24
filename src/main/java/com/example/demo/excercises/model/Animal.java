@@ -6,10 +6,17 @@ public class Animal {
 
     private String name;
     private String description;
+    private String imageUrl;
+    private Species species;
 
-    public Animal(String name, String description) {
+    public Animal() {
+    }
+
+    public Animal(String name, String description, String imageUrl, Species species) {
         this.name = name;
         this.description = description;
+        this.imageUrl = imageUrl;
+        this.species = species;
     }
 
     public String getName() {
@@ -26,6 +33,22 @@ public class Animal {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Species getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(Species species) {
+        this.species = species;
     }
 
     @Override

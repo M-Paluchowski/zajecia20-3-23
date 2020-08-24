@@ -6,12 +6,12 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Schronisko Reksio i Klakier</h1>
-    </div>
+    <div th:replace="fragments :: header"></div>
     <div>
+        <a th:href="@{'/edytuj?imie=' + ${animal.name}}">Edytuj zwierzaka</a><br/>
         <a href="/">Powrót do strony głównej</a>
         <h3 th:text="${animal.name}">Imie zwierzaka</h3>
+        <img th:src="${animal.imageUrl}" style="width: 300px"/>
         <p th:text="${animal.description}">Opis zwierzaka</p>
     </div>
 </body>
